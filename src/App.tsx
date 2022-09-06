@@ -1,6 +1,3 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -10,10 +7,12 @@ import IconButton from "@mui/material/IconButton";
 import "./App.css";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import { Button, Card, CardContent, CardHeader, Link } from "@mui/material";
-import { Code, FileDownload, GetApp, NavigateNext } from "@mui/icons-material";
-import Icon from "@mdi/react";
-import { mdiMicrosoftWindows, mdiPenguin, mdiApple, mdiGit } from "@mdi/js";
+import { Button, Card, CardContent, Link } from "@mui/material";
+import Code from "@mui/icons-material/Code";
+import GetApp from "@mui/icons-material/GetApp";
+import NavigateNext from "@mui/icons-material/NavigateNext";
+import { Icon } from "@mdi/react";
+import { mdiMicrosoftWindows, mdiPenguin, mdiApple, mdiGit } from "@mdi/js/mdi";
 
 const darkTheme = createTheme({
     typography: {
@@ -27,12 +26,10 @@ const darkTheme = createTheme({
 });
 
 function App() {
-    const [count, setCount] = useState(0);
-
     return (
-        <ThemeProvider theme={darkTheme}>
-            <CssBaseline />
-            <div className="App">
+        <div className="App">
+            <ThemeProvider theme={darkTheme}>
+                <CssBaseline />
                 <Box sx={{ flexGrow: 1 }}>
                     <AppBar position="static">
                         <Toolbar>
@@ -291,8 +288,8 @@ function App() {
                         ©2022 Team-Kamo
                     </Typography>
                 </Box>
-            </div>
-        </ThemeProvider>
+            </ThemeProvider>
+        </div>
     );
 }
 
