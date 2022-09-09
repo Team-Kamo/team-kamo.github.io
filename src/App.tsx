@@ -139,11 +139,6 @@ function App() {
                                     title="Windows"
                                     size={1}
                                 />
-                                <Icon
-                                    path={mdiPenguin}
-                                    title="Linux"
-                                    size={1}
-                                />
                                 <Icon path={mdiApple} title="Mac" size={1} />
                             </Box>
                             <Box
@@ -196,7 +191,7 @@ function App() {
                                     justifyContent: "right",
                                 }}
                             >
-                                <a href="#">
+                                <a href="https://github.com/Team-Kamo/cli-client">
                                     <Button
                                         variant="outlined"
                                         endIcon={
@@ -206,19 +201,8 @@ function App() {
                                                 size={1}
                                             />
                                         }
-                                        sx={{ mx: 2 }}
-                                        disabled
                                     >
                                         Visit repository
-                                    </Button>
-                                </a>
-                                <a href="#">
-                                    <Button
-                                        variant="outlined"
-                                        endIcon={<GetApp />}
-                                        disabled
-                                    >
-                                        Download release
                                     </Button>
                                 </a>
                             </Box>
@@ -266,17 +250,9 @@ function App() {
                                                 size={1}
                                             />
                                         }
-                                        sx={{ mx: 2 }}
+                                        sx={{ ml: 2 }}
                                     >
                                         Visit repository
-                                    </Button>
-                                </a>
-                                <a href="https://github.com/Team-Kamo/api-client/releases">
-                                    <Button
-                                        variant="outlined"
-                                        endIcon={<GetApp />}
-                                    >
-                                        Download release
                                     </Button>
                                 </a>
                             </Box>
