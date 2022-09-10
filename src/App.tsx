@@ -7,7 +7,7 @@ import IconButton from "@mui/material/IconButton";
 import "./App.css";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import { Button, Card, CardContent, Link } from "@mui/material";
+import { Button, Card, CardContent, Link, useMediaQuery } from "@mui/material";
 import Code from "@mui/icons-material/Code";
 import GetApp from "@mui/icons-material/GetApp";
 import NavigateNext from "@mui/icons-material/NavigateNext";
@@ -18,6 +18,7 @@ const darkTheme = createTheme({
     typography: {
         button: {
             textTransform: "none",
+            textDecoration: "none",
         },
     },
     palette: {
@@ -26,6 +27,7 @@ const darkTheme = createTheme({
 });
 
 function App() {
+    const pc: boolean = useMediaQuery("(min-width:600px)");
     return (
         <div className="App">
             <ThemeProvider theme={darkTheme}>
@@ -49,7 +51,7 @@ function App() {
                         </Toolbar>
                     </AppBar>
                 </Box>
-                <Box sx={{ flexGrow: 1, m: 20 }}>
+                <Box sx={{ flexGrow: 1, my: 10 }}>
                     <Typography variant="h1" gutterBottom align="center">
                         Octane
                     </Typography>
@@ -57,16 +59,18 @@ function App() {
                         The simple, easy virtual clipboard software
                     </Typography>
                     <Box sx={{ display: "flex", justifyContent: "center" }}>
-                        <Button
-                            variant="contained"
-                            endIcon={<NavigateNext />}
-                            size="large"
-                        >
-                            Visit our presentation slide
-                        </Button>
+                        <Link href="/octane-demo-an.mp4">
+                            <Button
+                                variant="contained"
+                                endIcon={<NavigateNext />}
+                                size="large"
+                            >
+                                Visit our presentation slide
+                            </Button>
+                        </Link>
                     </Box>
                 </Box>
-                <Box sx={{ flexGrow: 1, m: 10 }}>
+                <Box sx={{ flexGrow: 1, mx: pc ? 10 : 0, my: 10 }}>
                     <Typography variant="h3" gutterBottom align="center">
                         Downloads
                     </Typography>
@@ -94,15 +98,15 @@ function App() {
                                     justifyContent: "right",
                                 }}
                             >
-                                <a href="https://team-kamo.github.io/server">
+                                <Link href="https://team-kamo.github.io/server">
                                     <Button
                                         variant="outlined"
                                         endIcon={<Code />}
                                     >
                                         API document
                                     </Button>
-                                </a>
-                                <a href="https://github.com/Team-Kamo/server">
+                                </Link>
+                                <Link href="https://github.com/Team-Kamo/server">
                                     <Button
                                         variant="outlined"
                                         endIcon={
@@ -116,15 +120,15 @@ function App() {
                                     >
                                         Visit repository
                                     </Button>
-                                </a>
-                                <a href="https://github.com/Team-Kamo/server/releases">
+                                </Link>
+                                <Link href="https://github.com/Team-Kamo/server/releases">
                                     <Button
                                         variant="outlined"
                                         endIcon={<GetApp />}
                                     >
                                         Download release
                                     </Button>
-                                </a>
+                                </Link>
                             </Box>
                         </CardContent>
                     </Card>
@@ -147,7 +151,7 @@ function App() {
                                     justifyContent: "right",
                                 }}
                             >
-                                <a href="https://github.com/Team-Kamo/gui-client">
+                                <Link href="https://github.com/Team-Kamo/gui-client">
                                     <Button
                                         variant="outlined"
                                         endIcon={
@@ -161,15 +165,15 @@ function App() {
                                     >
                                         Visit repository
                                     </Button>
-                                </a>
-                                <a href="https://github.com/Team-Kamo/gui-client/releases">
+                                </Link>
+                                <Link href="https://github.com/Team-Kamo/gui-client/releases">
                                     <Button
                                         variant="outlined"
                                         endIcon={<GetApp />}
                                     >
                                         Download release
                                     </Button>
-                                </a>
+                                </Link>
                             </Box>
                         </CardContent>
                     </Card>
@@ -191,7 +195,7 @@ function App() {
                                     justifyContent: "right",
                                 }}
                             >
-                                <a href="https://github.com/Team-Kamo/cli-client">
+                                <Link href="https://github.com/Team-Kamo/cli-client">
                                     <Button
                                         variant="outlined"
                                         endIcon={
@@ -204,7 +208,7 @@ function App() {
                                     >
                                         Visit repository
                                     </Button>
-                                </a>
+                                </Link>
                             </Box>
                         </CardContent>
                     </Card>
@@ -232,15 +236,15 @@ function App() {
                                     justifyContent: "right",
                                 }}
                             >
-                                <a href="https://team-kamo.github.io/api-client">
+                                <Link href="https://team-kamo.github.io/api-client">
                                     <Button
                                         variant="outlined"
                                         endIcon={<Code />}
                                     >
                                         API document
                                     </Button>
-                                </a>
-                                <a href="https://github.com/Team-Kamo/api-client">
+                                </Link>
+                                <Link href="https://github.com/Team-Kamo/api-client">
                                     <Button
                                         variant="outlined"
                                         endIcon={
@@ -254,7 +258,7 @@ function App() {
                                     >
                                         Visit repository
                                     </Button>
-                                </a>
+                                </Link>
                             </Box>
                         </CardContent>
                     </Card>
